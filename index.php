@@ -13,7 +13,7 @@ class USER
     -> cognome
     -> età
     -> mail
-      + sconto (in base al'età)
+      + priorità (in base al'età)
 /*
 
 /*
@@ -33,7 +33,9 @@ class PRODUCT
 
 
 require_once __DIR__ . "/classes/Product.php";
+require_once __DIR__ . "/classes/UsedProduct.php";
 require_once __DIR__ . "/classes/User.php";
+require_once __DIR__ . "/classes/VipUser.php";
 
 // PRODOTTO
 $new_product = new Product("iPhone", "XS", 1200);
@@ -41,11 +43,23 @@ $new_product->setDiscount(5);
 
 var_dump($new_product);
 
+// PRODOTTO USATO
+$new_usedproduct = new UsedProduct("iPhone", "8", 500, "grado A");
+$new_usedproduct->setDiscount(20);
+
+var_dump($new_usedproduct);
+
 // UTENTE
 $new_user = new User("Mario", "Rossi", 30);
 $new_user->setMail("mrossi@mail.com");
 
 var_dump($new_user);
+
+// UTENTE VIP
+$new_vipuser = new VipUser("Giuseppe", "Verdi", 60, "alta");
+$new_vipuser->setMail("gverdi@mail.com");
+
+var_dump($new_vipuser);
 
 ?>
 
