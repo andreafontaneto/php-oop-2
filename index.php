@@ -1,8 +1,51 @@
 <?php
+/////////////// 
+
+/*
+class USER
+  - nome
+  - cognome
+  - età
+  - mail
+
+  >> User PREMIUM/VIP
+    -> nome
+    -> cognome
+    -> età
+    -> mail
+      + sconto (in base al'età)
+/*
+
+/*
+class PRODUCT
+  - nome
+  - prezzo
+  - sconto
+
+  >> USED Product
+    -> nome
+    -> prezzo
+    -> sconto
+      + status (grado A, grado B, grado C)
+*/
+
+/////////////// 
+
 
 require_once __DIR__ . "/classes/Product.php";
 require_once __DIR__ . "/classes/User.php";
 
+// PRODOTTO
+$new_product = new Product("iPhone", "XS", 1200);
+$new_product->setDiscount(5); 
+
+var_dump($new_product);
+
+// UTENTE
+$new_user = new User("Mario", "Rossi", 30);
+$new_user->setMail("mrossi@mail.com");
+
+var_dump($new_user);
 
 ?>
 
