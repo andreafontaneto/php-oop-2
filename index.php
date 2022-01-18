@@ -56,8 +56,9 @@ $new_user->setMail("mrossi@mail.com");
 var_dump($new_user);
 
 // UTENTE VIP
-$new_vipuser = new VipUser("Giuseppe", "Verdi", 60, "alta");
-$new_vipuser->setMail("gverdi@mail.com");
+$new_vipuser = new VipUser("Gianfranmarcangelo", "Baldopio", 60);
+$new_vipuser->setMail("gfmabp@mail.com");
+$new_vipuser->setPriority(20);
 
 var_dump($new_vipuser);
 
@@ -74,7 +75,35 @@ var_dump($new_vipuser);
 </head>
 <body>
 
-  <!-- Content -->
+  <h2>Nome Prodotto: <?php echo $new_product->getName() ?></h2>
+  <h2>Modello: <?php echo $new_product->getModel() ?></h2>
+  <h3>Prezzo: <?php echo $new_product->getPrice() ?></h3>
+  <h3>Sconto del <?php echo $new_product->getDiscount() ?> %</h3>
+
+  <hr>
+
+  <h2>Nome Prodotto Usato: <?php echo $new_usedproduct->getName() ?></h2>
+  <h2>Modello: <?php echo $new_usedproduct->getModel() ?></h2>
+  <h3>Prezzo: <?php echo $new_usedproduct->getPrice() ?></h3>
+  <h3>Sconto: <?php echo $new_usedproduct->getDiscount() ?> %</h3>
+  <h3>Stato: <?php echo $new_usedproduct->getStatus() ?></h3>
+
+  <hr>
+
+  <h2>Nome Utente: <?php echo $new_user->getName() ?></h2>
+  <h2>Cognome Utente: <?php echo $new_user->getLastname() ?></h2>
+  <h2>Età: <?php echo $new_user->getAge() ?></h2>
+  <h3>Mail: <?php echo $new_user->getMail() ?></h3>
+
+  <hr>
+
+  <h2>Nome Utente VIP: <?php echo $new_vipuser->getName() ?></h2>
+  <h2>Cognome Utente VIP: <?php echo $new_vipuser->getLastname() ?></h2>
+  <h2>Età UV: <?php echo $new_vipuser->getAge() ?></h2>
+  <h3>Mail UV: <?php echo $new_vipuser->getMail() ?></h3>
+  <h3>Priorità UV: <?php echo $new_vipuser->getPriority() ?></h3>
+
+  <hr>
   
 </body>
 </html>
